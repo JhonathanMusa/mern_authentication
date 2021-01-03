@@ -20,6 +20,7 @@ class Input extends React.Component {
   }
 
   render() {
+
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -28,9 +29,7 @@ class Input extends React.Component {
           placeholder="Say Something..."
           onChange={this.handleChange}
         />
-        <br />
-        <br />
-        {/* <p>{this.state.value}</p> */}
+        <br /><br />
         <input type="submit" value="Submit" />
       </form>
     );
