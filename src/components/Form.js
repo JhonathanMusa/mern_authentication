@@ -1,5 +1,7 @@
 import React from "react";
 
+const list = [];
+
 class Input extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +14,7 @@ class Input extends React.Component {
 
   handleChange(e) {
     this.setState({ value: e.target.value });
+    // list.push(e.target.value);
   }
 
   handleSubmit(e) {
@@ -20,7 +23,6 @@ class Input extends React.Component {
   }
 
   render() {
-
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -29,8 +31,15 @@ class Input extends React.Component {
           placeholder="Say Something..."
           onChange={this.handleChange}
         />
-        <br /><br />
+        <br />
+        <br />
         <input type="submit" value="Submit" />
+
+  {/*       <ul>
+          {list.map((i) => (
+            <li key={i}>{i}</li>
+          ))}
+        </ul> */}
       </form>
     );
   }
