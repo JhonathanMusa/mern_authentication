@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
-// import Input from "./components/Form";
-import Input2 from "./components/Form2";
+import Game from "./components/Game";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Welcome</h1>
-        {/*  <Input /> */}
-        <Input2 />
+        <h1>Tic Tac Toe</h1>
+        <Game />
       </div>
     );
   }

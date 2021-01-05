@@ -5,23 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #eee;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-
 }
 
-input[type="text"]{
+input[type="text"] {
   width: 200px;
   height: 30px;
   border-radius: 5px;
   border: 1px solid #aaa;
-
 }
 
-input[type="submit"]{
+input[type="submit"] {
   width: 200px;
   height: 30px;
   background: #555;
@@ -31,8 +30,53 @@ input[type="submit"]{
   cursor: pointer;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   background: #333;
   border: 1px solid #555;
   color: #aaa;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  font-size: 40px;
+  border: 1px solid #aaa;
+  line-height: 34px;
+  float: left;
+  height: 70px;
+  width: 70px;
+  margin-right: -1;
+  margin-top: -1;
+  text-align: center;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.game-info {
+  margin-left: 20px;
 }
