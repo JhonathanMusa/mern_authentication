@@ -1,7 +1,5 @@
 import React from "react";
 
-const list = [];
-
 class Input extends React.Component {
   constructor(props) {
     super(props);
@@ -34,12 +32,6 @@ class Input extends React.Component {
         <br />
         <br />
         <input type="submit" value="Submit" />
-
-  {/*       <ul>
-          {list.map((i) => (
-            <li key={i}>{i}</li>
-          ))}
-        </ul> */}
       </form>
     );
   }
