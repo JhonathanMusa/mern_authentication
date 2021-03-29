@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Board from "./Board";
 
-export default class Game extends Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,14 +16,12 @@ export default class Game extends Component {
   }
 
   handleClick(i) {
-    const history = this.state.history;
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
-
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-
     squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
       history: history.concat([
@@ -63,6 +61,7 @@ export default class Game extends Component {
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
+
     return (
       <div className="game">
         <div className="game-board">
@@ -73,7 +72,7 @@ export default class Game extends Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <div>{moves}</div>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
@@ -99,3 +98,5 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+export default Game;
