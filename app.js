@@ -3,6 +3,9 @@ const path = require("path");
 const morgan = require("morgan");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const authRouter = require("./routers/authRouter")
+const viewRouter = require("./routers/viewRouter")
+
 const jwtSecret = process.env.JWT_SECRET;
 
 const app = express();
@@ -17,11 +20,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(jwtSecret));
 
+
+app.use('/', viewRouter)
+app.use('/auth/', authRouter)
 /* app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/frontend/build/index.html'))
 }) */
-app.get("/", (req, res) => {
-    res.send("Working")
-})
 
 module.exports = app;
