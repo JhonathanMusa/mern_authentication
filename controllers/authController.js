@@ -23,7 +23,8 @@ const createUserToken = async (user, code, req, res) => {
         expires: d,
         httpOnly: true,
         secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
-        sameSite: 'none'
+        sameSite: 'lax'
+
     })
 
     // remove user password from output
